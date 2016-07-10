@@ -10,19 +10,17 @@ namespace Multicopy
     {
         private string source;
         private bool optionEraseBefore;
-        private bool optionRamCopy;
         private string optionVolumeSetText;
         private IList<DriveInfo> drives;
         private bool optionSetName;
 
-        public Copier(string source, IList<DriveInfo> drives, bool optionEraseBefore, bool optionSetName, string optionVolumeSetText, bool optionRamCopy)
+        public Copier(string source, IList<DriveInfo> drives, bool optionEraseBefore, bool optionSetName, string optionVolumeSetText)
         {
             InitializeComponent();
             this.source = source;
             this.drives = drives;
             this.optionEraseBefore = optionEraseBefore;
             this.optionVolumeSetText = optionVolumeSetText;
-            this.optionRamCopy = optionRamCopy;
             this.optionSetName = optionSetName;
 
             if (MessageBox.Show("Just checking", "Are you sure you want to go ahead with this copy?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
@@ -86,11 +84,6 @@ namespace Multicopy
             logBox.AppendText("using " + tasks.Count + " threads ");
             Task.WaitAll(tasks.ToArray());
             logBox.AppendText("- DONE!" + Environment.NewLine);
-        }
-
-        private void doRamCopy()
-        {
-            throw new NotImplementedException();
         }
 
         private void doPreErase()
@@ -191,6 +184,15 @@ namespace Multicopy
             public void name()
             {
                 d.VolumeLabel = n;
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var r = MessageBox.Show("The application will now terminate", "Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Asterisk);
+            if (r == DialogResult.OK)
+            {
+                Application.Exit();
             }
         }
     }

@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Multicopy
@@ -76,7 +73,7 @@ namespace Multicopy
                 MessageBox.Show("There were the following errors: \n" + r.problems.ToString(), "Please check your input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                new Copier(sourceBox.Text, usbDrivesCheckbox.CheckedItems.OfType<DriveInfo>().ToList(), optionEraseBefore.Checked, optionSetName.Checked, optionVolumeSetText.Text, optionRamCopy.Checked);
+                new Copier(sourceBox.Text, usbDrivesCheckbox.CheckedItems.OfType<DriveInfo>().ToList(), optionEraseBefore.Checked, optionSetName.Checked, optionVolumeSetText.Text);
             }
         }
 
@@ -87,6 +84,11 @@ namespace Multicopy
             if (usbDrivesCheckbox.CheckedItems.Count == 0) { r.good = false; r.problems.AppendLine("No drives selected"); }
             if (sourceBox.Text.Length == 0) { r.good = false; r.problems.AppendLine("No source folder selected"); }
             return r;
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/robertphipps/Multicopy");
         }
     }
 

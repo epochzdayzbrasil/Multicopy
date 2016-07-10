@@ -42,7 +42,8 @@
             this.destinationDrivesLabel = new System.Windows.Forms.Label();
             this.optionsLabel = new System.Windows.Forms.Label();
             this.setupGoButton = new System.Windows.Forms.Button();
-            this.optionRamCopy = new System.Windows.Forms.CheckBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // sourceBrowser
@@ -161,7 +162,7 @@
             // 
             // setupGoButton
             // 
-            this.setupGoButton.Location = new System.Drawing.Point(13, 389);
+            this.setupGoButton.Location = new System.Drawing.Point(12, 389);
             this.setupGoButton.Name = "setupGoButton";
             this.setupGoButton.Size = new System.Drawing.Size(346, 42);
             this.setupGoButton.TabIndex = 12;
@@ -169,23 +170,33 @@
             this.setupGoButton.UseVisualStyleBackColor = true;
             this.setupGoButton.Click += new System.EventHandler(this.setupGoButton_Click);
             // 
-            // optionRamCopy
+            // label1
             // 
-            this.optionRamCopy.AutoSize = true;
-            this.optionRamCopy.Location = new System.Drawing.Point(12, 345);
-            this.optionRamCopy.Name = "optionRamCopy";
-            this.optionRamCopy.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.optionRamCopy.Size = new System.Drawing.Size(111, 17);
-            this.optionRamCopy.TabIndex = 13;
-            this.optionRamCopy.Text = "Copy using RAM?";
-            this.optionRamCopy.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(216, 362);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(101, 13);
+            this.label1.TabIndex = 13;
+            this.label1.Text = "Robert Phipps 2016";
+            // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(323, 362);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(40, 13);
+            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "GitHub";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // Setup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 443);
-            this.Controls.Add(this.optionRamCopy);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.setupGoButton);
             this.Controls.Add(this.optionsLabel);
             this.Controls.Add(this.destinationDrivesLabel);
@@ -222,7 +233,8 @@
         private System.Windows.Forms.Label destinationDrivesLabel;
         private System.Windows.Forms.Label optionsLabel;
         private System.Windows.Forms.Button setupGoButton;
-        private System.Windows.Forms.CheckBox optionRamCopy;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
     }
 }
 
