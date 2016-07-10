@@ -76,8 +76,7 @@ namespace Multicopy
                 MessageBox.Show("There were the following errors: \n" + r.problems.ToString(), "Please check your input", MessageBoxButtons.OK, MessageBoxIcon.Error);
             } else
             {
-                new Copier(sourceBox.Text, usbDrivesCheckbox.CheckedItems.OfType<DriveInfo>().ToList(), optionEraseBefore.Checked, optionSetName.Checked, optionVolumeSetText.Text, optionRamCopy.Checked).Show();
-                Hide();
+                new Copier(sourceBox.Text, usbDrivesCheckbox.CheckedItems.OfType<DriveInfo>().ToList(), optionEraseBefore.Checked, optionSetName.Checked, optionVolumeSetText.Text, optionRamCopy.Checked);
             }
         }
 

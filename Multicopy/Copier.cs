@@ -27,12 +27,12 @@ namespace Multicopy
 
             if (MessageBox.Show("Just checking", "Are you sure you want to go ahead with this copy?", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) == DialogResult.OK)
             {
+                Show();
                 run();
             }
             else
             {
-                Parent.Show();
-                Hide();
+                Close();
             }
         }
 
@@ -42,9 +42,9 @@ namespace Multicopy
             if (optionEraseBefore) { doPreErase(); };
             doFileCopy();
             if (optionSetName) { doSetName(); }
+            logBox.AppendText("All done!" + Environment.NewLine);
             MessageBox.Show("All done!", "Complete", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Parent.Show();
-            Hide();
+            Close();
         }
 
         private void doSetName()
