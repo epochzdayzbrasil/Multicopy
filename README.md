@@ -1,6 +1,8 @@
 # Multicopy
 ## Easily copy a directory to multiple USB drives
 
+[![Build status](https://ci.appveyor.com/api/projects/status/nfugrhfo5pkyk85f?svg=true)](https://ci.appveyor.com/project/robertphipps/multicopy)
+
 This software should hopefully make it easy, and relatively quick to copy files to
 a large number of memory sticks simultaneously, using Tasks for multithreading.
 
